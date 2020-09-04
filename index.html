@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DRM Types</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Types of DRM</h1>
+
+<h2 id="arbitrary-check">Arbitrary check</h2>
+<img src="images/arbitrary.png"/>
+<p>An arbitrary check to determine whether to allow reading the file.</p>
+<p>DVD region codes</p>
+<p>DVDs may restrict playback to just one region of the world</p>
+<p>Ineffective as they are easily bypassed by using a universal DVD reader</p>
+<p>If a customer buys a DVD from abroad, they cannot play it at home</p>
+
+<h2 id="server-activation">Server activation</h2>
+<img src="images/activation.png"/>
+<p>A call to a server to determine whether to allow reading the file. If the server is unavailable, the file cannot be read.</p>
+<p>Software</p>
+<p>Performs a check when first starting the software to see if the user has legitimately purchased it</p>
+<p>Ineffective as the code that performs the check can be bypassed, activation codes and logins can be shared</p>
+<p>If a customer who legally purchased software wants to activate it, but the server no longer responds, they cannot use the software</p>
+
+<h2 id="always-online-server-check">Always online server check</h2>
+<img src="images/online.png"/>
+<p>Similar to server activation, but happens continuously, not just once</p>
+<p>Games</p>
+<p>While the game is played, repeatedly check that it has been legitimately purchased</p>
+<p>Ineffective as the code that performs the check can be bypassed, activation codes and logins can be shared</p>
+<p>If a player who legally purchased the game loses their internet connection (even temporarily), or the server no longer responds, they will stop being able to play the game</p>
+
+<h2 id="encryption-at-rest">Encryption at rest</h2>
+<img src="images/encrypted.png"/>
+<p>A legally purchased file that is unreadable without the accompanying license. After the license is also downloaded, the original file may continue to be encrypted and unreadable.</p>
+<p>Ebooks, Adobe digital editions, Kindle ebooks</p>
+<p>After the ebook is downloaded, it comes in the form of an encrypted file. It is unreadable until the unlocking license is downloaded.</p>
+<p>Ineffective as the file needs to be decrypted to be read, and once it is decrypted, it can easily be copied, defeating the initial encryption</p>
+<p>If a reader who legally purchases the book wants to copy the ebook for backup they are unable to do so as the files are encrypted</p>
+<p>Case Study: Microsoft Ebook Store</p>
+<p>Microsoft offered an ebook store. The books that were sold were encrypted and used DRM. Microsoft decided to close down their store one day, and all the customers who had bought books from them would find that their books were no longer readable. In this case Microsoft offered refunds, but no option was given to keep the ebooks after the store had closed.</p>
+<p><a href="https://www.bbc.co.uk/news/technology-47810367">https://www.bbc.co.uk/news/technology-47810367</a></p>
+
+<h2 id="runtime-obfuscation">Runtime obfuscation</h2>
+<img src="images/obfuscated.png"/>
+<p>When a program runs, but part of the code uses techniques commonly found in malware to evade investigation by the user</p>
+<p>Games, Denuvo</p>
+<p>The core logic of the game is hidden away and obfuscated, making it impossible for the player to investigate. May use virtual execution environments, obfuscated code pathways and obtuse design.</p>
+<p>Ineffective as ultimately the code needs to run in order for the game to run, and it can be reverse engineered.</p>
+<p>If a player who bought the game wanted to modify (“mod”) it to add new gameplay mechanics, they would be unable to do so</p>
+
+<h2 id="proprietary-reader">Proprietary reader</h2>
+<img src="images/proprietary.png"/>
+<p>A digital file can only be read using a special program or website</p>
+<p>Ebooks, Adobe digital editions, Kindle ebooks, Comixology</p>
+<p>Once an ebook is purchased it can only be read by visiting the website it was from, or only using a device provided by a specific manufacturer. This has related issues of vendor lock in and vertical integration.</p>
+<p>Ineffective as ultimately the file needs to be readable by a human, and the human could copy it that way</p>
+<p>If a reader who legally purchased the book wanted to use their own reader, e.g. to customise the font for accessibility reasons, they would be prohibited from doing so.</p>
+<p>Case Study: Comixology</p>
+<p>Comixology provides a proprietary reader for the comics it sells, with a “guided view” technology. Users can download normal DRM-free comics, but only at the discretion of the publisher, so if the publisher doesn’t provide DRM-free versions, readers would be forced to use Comixology’s implementation.</p>
+<p><a href="https://www.comixology.co.uk/new-to-comixology">https://www.comixology.co.uk/new-to-comixology</a></p>
+<p><a href="https://www.comixology.co.uk/drm-free-backup">https://www.comixology.co.uk/drm-free-backup</a></p>
+
+<h2 id="software-trusted-pathway">Software trusted pathway</h2>
+<img src="images/software.png"/>
+<p>Operating systems may give applications an API which prevents 3<sup>rd</sup> party applications from accessing data within it</p>
+<p>Streaming APIs</p>
+<p>When playing a media file, the viewer is unable to make copies of the content as it plays</p>
+<p>Ineffective as ultimately the file needs to be readable by a human, and the human could copy it that way</p>
+<p>If a paying viewer wanted to take a screenshot of a tv show, to use it in a critical review, they would be unable to do so</p>
+<p>Case Study: Netflix</p>
+<p>The official Netflix apps for Windows 10 and Android both prevent the taking of screenshots. However, as this kind of protection isn’t available on all web browsers, if you view using Google Chrome or Firefox, you can take screenshots.</p>
+<p>Case Study: Banking Apps</p>
+<p>If you were using a mobile banking app you may want to protect your privacy by preventing screenshots from being made. Banking apps such as Nationwide’s implement this. However if you wanted to take a screenshot to keep in your own records, you are prevented from doing this.</p>
+<p><a href="https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE">https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE</a></p>
+
+<h2 id="hardware-trusted-pathway">Hardware trusted pathway</h2>
+<img src="images/hardware.png"/>
+<p>A hardware implementation of DRM which provides an “authorised” route for data to flow, to prevent it being copied</p>
+<p>HDMI / HDCP</p>
+<p>A specification for HDMI screens and cables where any interruption or incompatibility results in the screen not displaying the content</p>
+<p>Ineffective as it can be bypassed with hardware splitters</p>
+<p>If a customer buys an older TV or HDMI cable, it may be unable to connect to newer peripherals, and they will no longer be able to use it</p>
+<p><a href="https://www.howtogeek.com/208917/htg-explains-how-hdcp-breaks-your-hdtv-and-how-to-fix-it/">https://www.howtogeek.com/208917/htg-explains-how-hdcp-breaks-your-hdtv-and-how-to-fix-it/</a></p>
+
+</body>
+</html>
